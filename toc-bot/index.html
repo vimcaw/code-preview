@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>Test</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.1.1/tocbot.css">
   <style>
         .article{
@@ -13,18 +13,24 @@
             line-height: 2;
             box-shadow: 0 0 2rem #d9d9d9;
         }
-        #sidebar{
+        .sidebar{
             position: fixed;
             padding: 1rem;
             width: 18%;
             top: 10%;
             right: 5%;
             box-shadow: 0 0 2rem #d9d9d9;
+            overflow: hidden;
         }
-      a.is-active-link{
-        color: #54bc4b;
-        background: #ccc
-      }
+        a.is-active-link{
+            color: #54bc4b;
+        }
+        li.toc-list-item:nth-of-type(3){
+            color: #54bc4b;
+        }
+        li.toc-list-item:nth-of-type(3) a::before{
+            background-color: #54BC4B;
+        }
       </style>
 </head>
 <body>
@@ -115,12 +121,14 @@
             <li>Comparison of source code hosting facilities</li>
         </ul>
     </div>
-    <div id="sidebar"><p>Loading...</p></div>
+    <div class="sidebar">
+        <p>Loading...</p>
+    </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.1.1/tocbot.min.js"></script>
   <script>
     tocbot.init({
       // Where to render the table of contents.
-      tocSelector: '#sidebar',
+      tocSelector: '.sidebar',
       // Where to grab the headings to build the table of contents.
       contentSelector: '.article',
       // Which headings to grab inside of the contentSelector element.
